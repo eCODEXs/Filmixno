@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMDB - MILAN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <svg data-testid="icon-now-logo" xmlns="http://www.w3.org/2000/svg" width="3.9375rem" height="100%" viewBox="0 0 78 24"><path d="M34.2950726,17.6978452 C31.1391867,17.6978452 28.580757,15.1339319 28.580757,11.9712817 C28.580757,8.80855728 31.1391867,6.24464396 34.2950726,6.24464396 C37.4509586,6.24464396 40.0093882,8.80855728 40.0093882,11.9712817 C40.0093882,15.1339319 37.4509586,17.6978452 34.2950726,17.6978452 M75.8826411,0.879343653 C74.0486772,-0.0461052632 71.804546,0.709040248 70.8884167,2.56669969 L66.937257,10.5308359 L64.3789757,3.00033437 L64.3740821,2.99966563 C63.8655992,1.53648297 62.4833236,0.487021672 60.8575574,0.487021672 C59.5614376,0.487021672 58.4201316,1.15404334 57.7528312,2.16590712 L57.7474186,2.16523839 L52.6428673,10.0051393 L51.7383787,3.65331269 C51.4256373,1.60848297 49.5279833,0.215219814 47.5011696,0.527962848 C45.471835,0.839591331 44.0791049,2.72890402 44.3902894,4.76258824 L44.5485137,5.82765325 C42.4614205,2.33710217 38.6504681,-3.71517028e-05 34.2944795,-3.71517028e-05 C29.900603,-3.71517028e-05 26.0614015,2.37863777 23.9867646,5.9204582 L24.2140175,4.80508978 C24.6115061,2.85410526 23.3554985,0.949486068 21.4084643,0.551145511 C19.4621715,0.153845201 17.5609586,1.41172755 17.1638407,3.36286068 L15.6171125,10.9562229 L9.92778365,2.130613 C9.28435779,1.14245201 8.17441483,0.489622291 6.91277224,0.489622291 C5.18594715,0.489622291 3.74324373,1.71235913 3.39231787,3.34428483 L0.0744262357,19.6202229 C-0.322914068,21.5712074 0.909070722,23.4674303 2.85921901,23.8815975 C3.10167148,23.9330898 3.36443954,23.9577585 3.60325894,23.9595548 C5.27195475,23.9712074 6.77360304,22.7972879 7.1245289,21.062452 L8.67155361,13.4691641 C8.67155361,13.4691641 14.2508521,22.149808 14.255449,22.154935 C14.255449,22.154935 14.3866106,22.3576347 14.4487437,22.4456099 C15.0852741,23.3472074 16.1639281,23.9595548 17.3772285,23.9595548 C19.1512837,23.9595548 20.6254985,22.6667368 20.9220023,20.9656347 L22.4448559,13.4898947 C23.1894148,19.3840124 28.2109243,23.9425263 34.2944795,23.9425263 C39.8986905,23.9425263 44.6006373,20.0748854 45.8898616,14.8586378 L46.7383711,20.570935 C46.9771905,22.4511827 48.5158369,23.9391084 50.4441125,23.9391084 C51.8312817,23.9391084 52.9628749,23.1451022 53.682373,22.0420681 L59.8019624,12.6432074 L62.7412722,21.2961362 C63.2676981,22.8392693 64.626989,23.9391084 66.3006525,23.9391084 C67.8554624,23.9391084 69.0772894,23.0039257 69.7457019,21.6155666 L77.5459985,5.88144892 C78.4665023,4.03671827 77.7177171,1.80531269 75.8826411,0.879343653" fill="#fff"></path></svg>
+    </nav>
+    <div class="poster" >
+        <img src="./img/background.jpg" alt="" srcset="" width="100%">
+        <img id="imgLast" src="./img/title.avif" alt="" width="250">
+    </div>
+    <div class="close" style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+          </svg>
+    </div>
+    <main>
+        <div class="container">
+            <div class="serieTV"  >
+                <div class="trend">
+                    <h1>Most Watched</h1>
+                    <div class="serie0">
+                    </div>
+                </div>
+            <div class="trend">
+                <h1>Top serie</h1>
+                <div class="serie">
+                </div>
+            </div>
+            <div class="trend">
+                <h1>Film e TV</h1>
+                <div class="serieV2"  >
+                </div>
+            </div>
+
+            <div class="trend">
+                <h1>I Titoli del momento</h1>
+                <div class="serieV3"  >
+                </div>
+            </div>
+
+            <div class="trend">
+                <h1>Futuri distopici</h1>
+                <div class="serieV4"  >
+                </div>
+            </div>
+
+            <div class="trend">
+                <h1>Tesori nascosti</h1>
+                <div class="serieV5"  >
+                </div>
+            </div>
+        </div>
+        <div class="serieInfo" style="display: none;" >
+            <div class="topSerie">
+                <img id="imgInfo" src="./img/background.jpg">
+                <div class="infoTitle">
+                    <div class="forTitle">
+                        <div class="titleH1">
+                            <h3 id="h3Info">The Last Of US </h3>
+                            <p id="pInfo">1 season - HBO</p>
+                        </div>
+                        <div class="rate">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                   <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                 </svg>
+                 <span id="spanInfo">9.9/10</span>
+                 
+                           </div>
+
+                    </div>
+                    <div class="dateUscita">
+                        <h4>New</h4>
+                        <p id="dateUscita">2023-01-15</p>
+                    </div>
+                    <span id="typeInfo" style="font-size: 0.9em;"></span>
+                </div>
+
+            </div>
+
+            <div class="story">
+                <p id="story">After a global pandemic destroys civilization, a hardened survivor takes charge of a 14-year-old girl who may be humanity’s last hope.</p>
+            </div>
+            <div class="linea"></div>
+            <div class="description">
+                <h3>Next Episode</h3>
+                <div class="timeEp">
+                    <div class="svgTime">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                          </svg>
+                          <span id="dayTime">Sunday</span> | <span id="hoursTime">21:00</span>
+                    </div>
+                    <div class="svgTime">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stopwatch" viewBox="0 0 16 16">
+                            <path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z"/>
+                            <path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z"/>
+                          </svg>
+                          <span id="durata">66 min</span>
+                    </div>
+                </div>
+                <div class="folowers">
+                    <div class="svgTime">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                          </svg>
+                          <span id="folowers">416k watched this Serie TV</span>
+                    </div>
+                </div>
+            </div>
+            <div class="linea"></div>
+
+            <div class="cast">
+                <h3>Cast</h3>
+                <div class="castParent">
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+    <div class="loading" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+</body> 
+<script src="./main.js"></script>
+</html>

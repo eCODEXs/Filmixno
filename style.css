@@ -1,0 +1,467 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #ced4da;
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #6c757d;
+    --bs-gray-700: #495057;
+    --bs-gray-800: #343a40;
+    --bs-gray-900: #212529;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-primary-rgb: 13,110,253;
+    --bs-secondary-rgb: 108,117,125;
+    --bs-success-rgb: 25,135,84;
+    --bs-info-rgb: 13,202,240;
+    --bs-warning-rgb: 255,193,7;
+    --bs-danger-rgb: 220,53,69;
+    --bs-light-rgb: 248,249,250;
+    --bs-dark-rgb: 33,37,41;
+    --bs-white-rgb: 255,255,255;
+    --bs-black-rgb: 0,0,0;
+    --bs-body-color-rgb: 33,37,41;
+    --bs-body-bg-rgb: 255,255,255;
+    --bs-font-sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --bs-body-font-family: var(--bs-font-sans-serif);
+    --bs-body-font-size: 1rem;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: 1.5;
+    --bs-body-color: #212529;
+    --bs-body-bg: #fff;
+    }
+    
+
+    body{
+        font-family: var(--bs-body-font-family);
+        font-size: var(--bs-body-font-size);
+        font-weight: var(--bs-body-font-weight);
+        line-height: var(--bs-body-line-height);
+        color: var(--bs-body-color);
+        text-align: var(--bs-body-text-align);
+        background-color: var(--bs-body-bg);
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        overflow: scroll;
+        background: #002a29;
+        color: white;
+        padding-left: 10px;
+        padding-right: 10px;
+        overflow-x: hidden;
+    }
+
+    nav{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 99;
+    }
+    nav svg{
+        height: 25px;
+        width: 80px;
+    }
+
+    .poster{
+        margin-top: 20px;
+        width: 100%;
+        height: max-content;
+        overflow: hidden;
+        border-radius: 10px;
+
+    }
+
+    .poster img:first-child{
+        border-radius: 10px;
+        transition: 200ms;
+        
+    }
+
+
+    #imgLast{
+        position: absolute;
+        left: 0%;
+        transform: translateX(100px) translateY(100%);
+        object-fit: cover;
+        height: auto;
+      max-width: 100%;
+    }
+
+    main{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        margin-top: 20px;
+        
+    }
+
+    .trend{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        gap: 10px;
+        
+       overflow-x: hidden;
+    }
+
+
+    .trend h1{
+       font-size: 1.5em;
+       color: gray;
+       font-weight: 500;
+       margin-top: 10px;
+    }
+
+    .serie{
+       display: flex;
+       gap: 5px;
+       height: max-content;
+       width: 100%;
+       overflow: scroll;
+       overflow-y: hidden;
+       
+     }
+
+     .serie0{
+        display: flex;
+        gap: 5px;
+        height: max-content;
+        width: 100%;
+        overflow: scroll;
+        overflow-y: hidden;
+        
+      }
+
+     .serieV2{
+        display: flex;
+        gap: 5px;
+        height: max-content;
+        width: 100%;
+        overflow: scroll;
+        overflow-y: hidden;
+       
+        
+      }
+
+      .serieV3{
+        display: flex;
+        gap: 5px;
+        height: max-content;
+        width: 100%;
+        overflow: scroll;
+        overflow-y: hidden;
+       
+        
+      }
+      .serieV4{
+        display: flex;
+        gap: 5px;
+        height: max-content;
+        width: 100%;
+        overflow: scroll;
+        overflow-y: hidden;
+       
+        
+      }
+      .serieV5{
+        display: flex;
+        gap: 5px;
+        height: max-content;
+        width: 100%;
+        overflow: scroll;
+        overflow-y: hidden;
+       
+        
+      }
+
+      .serie0::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
+    }
+
+     .serieV2::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
+    }
+
+
+    .serieV3::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
+    }
+    .serieV4::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
+    }
+    .serieV5::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
+    }
+    .serie::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
+    }
+
+    .serie-container{
+        width: 100%;
+        height: 140px;
+      }
+      
+     .serie-container img{
+        width: 250px;
+        height: 100%;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 200ms;
+        
+      }
+
+      @media screen and (max-width: 700px) {
+        .poster img:first-child{
+            border-radius: 10px;
+            transition: 200ms;
+            height: 180px;
+        }
+
+        #imgLast{
+            position: absolute;
+            left: 0%;
+            transform: translateX(60px) translateY(100%);
+            object-fit: cover;
+            height: auto;
+          max-width: 100%;
+        }
+      }
+
+      .serieInfo{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    background: #202124;
+    padding: 5px;
+    border-radius: 10px;
+    }
+
+    .topSerie{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        gap: 10px;
+    }
+
+    .topSerie img{
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+        background-position: center;
+
+    }
+
+    .infoTitle{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .infoTitle p, .infoTitle span{
+       color: silver;
+
+    }
+  
+  .rate {
+   display: flex;
+   gap: 5px;
+   align-items: center;
+   }
+   
+   .rate svg{
+    height: 20px;
+   width: 20px;
+   color: yellow;
+  }
+  
+  .rate span{
+   font-size: 1em;
+   color: yellow;
+  }
+
+  .forTitle{
+    display: flex;
+    justify-content: space-between;
+   }
+
+   .dateUscita{
+    display: flex;
+    gap: 10px;
+   }
+
+   .dateUscita h4{
+    color: #dc3545;
+   }
+
+   .linea{
+    width: 100%;
+    height: 1px;
+    background-color: silver;
+    opacity: 0.2;
+    margin: 10px 0;
+   }
+
+   .story{
+    font-size: medium;
+    margin: 5px 0;
+   }
+
+   .timeEp{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    align-items: center;
+    margin-top: 10px;
+   }
+
+   .svgTime{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+   }
+
+   .svgTime svg{
+    height: 20px;
+    width: 20px;
+    color: yellow;
+   }
+
+   .folowers{
+   margin: 10px 0;
+   }
+
+   .castParent{
+    display: flex;
+    gap: 5px;
+    height: max-content;
+    width: 100%;
+    overflow: scroll;
+    overflow-y: hidden;
+    margin-top: 15px;
+    }
+
+    .castParent::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
+    }
+
+    .person{
+        width: 200px;
+        height: 140px;
+        }
+
+        .person img{
+            width: 100px;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            }
+
+            .infoPerson{
+                position: relative;
+                transform: translateY(-50px);
+                margin-left: 5px;
+                }
+     
+ 
+                .infoPerson{
+                    position: relative;
+                    transform: translateY(-50px);
+                    margin-left: 5px;
+                    
+                    }
+
+                    .infoPerson h5{
+                       color: silver;
+                       font-weight: 500;
+                        }
+    
+                    .infoPerson h4{
+                            font-weight: 500;
+                             }
+
+                             .spinner {
+                                width: 56px;
+                                height: 56px;
+                                border-radius: 50%;
+                                background: radial-gradient(farthest-side,#fcff47 94%,#0000) top/9px 9px no-repeat,
+                                       conic-gradient(#0000 30%,#fcff47);
+                                -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+                                animation: spinner-c7wet2 1s infinite linear;
+                             }
+                             
+                             @keyframes spinner-c7wet2 {
+                                100% {
+                                   transform: rotate(1turn);
+                                }
+                             }
+        .loading{
+            width: 100%;
+            height: 100vh;
+            background-color: #002a29;
+            z-index: 98;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            align-items: center;
+         }
+
+         .close{
+            position: absolute;
+            right: 0%;
+            transform: translateY(40px) translateX(-10px);
+            cursor: pointer;
+         }
+
+         .close svg{
+           width: 20px;
+           height: 20px;
+        }
