@@ -94,7 +94,7 @@ let api = 'LhqxB7GE9a95beFHqiNC85GHdrX8hNi34H2uQ7QG'
 
         pInfo.innerHTML = info.season_count + ' Season - '+info.network
         spanInfo.innerHTML = info.rating+ '/10'
-        typeInfo.innerHTML = '<p>Type: '+info.genres[0]+', '+info.genres[1]+info.genres[2]+'</p>'
+        typeInfo.innerHTML = '<p>Type: '+info.genres[0]+', '+info.genres[1]+', '+info.genres[2]+'</p>'
         dateUscita.innerHTML = info.first_air_date
         story.innerHTML = info.overview
         
@@ -229,7 +229,7 @@ let api = 'LhqxB7GE9a95beFHqiNC85GHdrX8hNi34H2uQ7QG'
       
               pInfo.innerHTML = info.season_count + ' Season - '+info.network
               spanInfo.innerHTML = info.rating+ '/10'
-              typeInfo.innerHTML = '<p>Type: '+info.genres[0]+', '+info.genres[1]+info.genres[2]+'</p>'
+              typeInfo.innerHTML = '<p>Type: '+info.genres[0]+', '+info.genres[1]+', '+info.genres[2]+'</p>'
               dateUscita.innerHTML = info.first_air_date
               story.innerHTML = info.overview
               
@@ -344,7 +344,7 @@ let api = 'LhqxB7GE9a95beFHqiNC85GHdrX8hNi34H2uQ7QG'
       
               pInfo.innerHTML = info.season_count + ' Season - '+info.network
               spanInfo.innerHTML = info.rating+ '/10'
-              typeInfo.innerHTML = '<p>Type: '+info.genres[0]+', '+info.genres[1]+info.genres[2]+'</p>'
+              typeInfo.innerHTML = '<p>Type: '+info.genres[0]+', '+info.genres[1]+', '+info.genres[2]+'</p>'
               dateUscita.innerHTML = info.first_air_date
               story.innerHTML = info.overview
               
@@ -462,7 +462,7 @@ let api = 'LhqxB7GE9a95beFHqiNC85GHdrX8hNi34H2uQ7QG'
       
               pInfo.innerHTML = info.season_count + ' Season - '+info.network
               spanInfo.innerHTML = info.rating+ '/10'
-              typeInfo.innerHTML = '<p>Type: '+info.genres[0]+', '+info.genres[1]+info.genres[2]+'</p>'
+              typeInfo.innerHTML = '<p>Type: '+info.genres[0]+', '+info.genres[1]+', '+info.genres[2]+'</p>'
               dateUscita.innerHTML = info.first_air_date
               story.innerHTML = info.overview
               
@@ -578,7 +578,7 @@ let api = 'LhqxB7GE9a95beFHqiNC85GHdrX8hNi34H2uQ7QG'
       
               pInfo.innerHTML = info.season_count + ' Season - '+info.network
               spanInfo.innerHTML = info.rating+ '/10'
-              typeInfo.innerHTML = '<p>Type: '+info.genres[0]+', '+info.genres[1]+info.genres[2]+'</p>'
+              typeInfo.innerHTML = '<p>Type: '+info.genres[0]+', '+info.genres[1]+', '+info.genres[2]+'</p>'
               dateUscita.innerHTML = info.first_air_date
               story.innerHTML = info.overview
               
@@ -693,7 +693,7 @@ let api = 'LhqxB7GE9a95beFHqiNC85GHdrX8hNi34H2uQ7QG'
 
         pInfo.innerHTML = info.season_count + ' Season - '+info.network
         spanInfo.innerHTML = info.rating+ '/10'
-        typeInfo.innerHTML = '<p>Type: '+info.genres[0]+', '+info.genres[1]+info.genres[2]+'</p>'
+        typeInfo.innerHTML = '<p>Type: '+info.genres[0]+', '+info.genres[1]+', '+info.genres[2]+'</p>'
         dateUscita.innerHTML = info.first_air_date
         story.innerHTML = info.overview
         
@@ -756,3 +756,325 @@ let api = 'LhqxB7GE9a95beFHqiNC85GHdrX8hNi34H2uQ7QG'
     closeBTN.onclick = () => {
         location.reload();
     }
+	
+	// ok
+	
+	let svgSearch = document.querySelector('.svgSearch')
+let links = document.querySelector('.links')
+
+let inputSearch, btnSearch, logos;
+
+inputSearch = document.querySelector('#inputSearch')
+
+btnSearch = document.querySelector('#btnSearch')
+
+logos = document.querySelector('#logos')
+
+    
+
+let serieCon = document.querySelector(".serie-container")
+
+
+btnSearch.onclick = search
+
+function search() {
+	
+	spinner.style.display = 'flex'
+
+            setTimeout(() => {
+                spinner.style.display = 'none'
+            }, 2000);
+      
+      poster.style.display = 'none'
+      serieTV.style.display = 'none'
+			
+			
+	fetch('https://76aoj6qf4l.execute-api.us-east-1.amazonaws.com/API/limit/10/search/'+encodeURIComponent(inputSearch.value))
+	.then(r => r.json()).then(res => {
+		
+		
+		
+		
+		for (ke in res.data) {
+			let divol = document.createElement('div')
+			divol.setAttribute('class', 'srcParent')
+			
+			let imgDivol = document.createElement('img')
+			imgDivol.setAttribute('src', res.data[ke].poster.url)
+			
+			divol.appendChild(imgDivol)
+			
+			serieCon.appendChild(divol)
+		}
+		
+		
+		serieCon.onclick = function (e) {
+            var tgt = e.target, i = 0, items;
+            if (tgt === this) return;
+            items = children(this);
+            while (tgt.parentNode !== this) tgt = tgt.parentNode;
+            while (items[i] !== tgt) i++;
+			
+			
+			console.log(res.data[i].id)
+			
+			
+            spinner.style.display = 'flex'
+
+            setTimeout(() => {
+                spinner.style.display = 'none'
+            }, 2000);
+      
+      poster.style.display = 'none'
+      serieTV.style.display = 'none'
+      serieInfo.style.display = 'flex'
+      
+      closeBTN.style.display = 'flex'
+      
+      h3Info.innerHTML = res.data[i].name
+      
+      
+      imgInfo.setAttribute('src', res.data[i].poster.url)
+      
+
+      fetch('https://76aoj6qf4l.execute-api.us-east-1.amazonaws.com/API/INFO/'+res.data[i].id)
+      .then( reso => reso.json()).then(info => { 
+        
+        pInfo.innerHTML = info.season_count + ' Season - '+info.network
+        spanInfo.innerHTML = info.rating+ '/10'
+        typeInfo.innerHTML = '<p>Type: '+info.genres[0]+', '+info.genres[1]+', '+info.genres[2]+'</p>'
+        dateUscita.innerHTML = info.first_air_date
+        story.innerHTML = info.overview
+        
+
+        function kFormatter(num) {
+            return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
+        }
+
+        dayTime.innerHTML = info.day_of_week
+        hoursTime.innerHTML = info.air_time
+        durata.innerHTML = info.runtime+' min'
+        folowers.innerHTML = kFormatter(info.follower_count)+' watched this Serie TV'
+
+
+        for (const keps in info.characters) {
+           
+
+            let personDiv = document.createElement('div')
+            personDiv.setAttribute('class', 'person')
+
+            let imgPersona = document.createElement('img')
+            imgPersona.setAttribute('src', info.characters[keps].poster.url)
+
+            personDiv.appendChild(imgPersona)
+
+            let infoPerson = document.createElement('div')
+            infoPerson.setAttribute('class', 'infoPerson')
+
+            let nameH5 = document.createElement('h5')
+            let nameH4 = document.createElement('h4')
+
+            nameH5.innerHTML =  info.characters[keps].name
+            nameH4.innerHTML =  info.characters[keps].actor_name
+
+            infoPerson.appendChild(nameH5)
+            infoPerson.appendChild(nameH4)
+
+            personDiv.appendChild(infoPerson)
+
+            parentPerson.appendChild(personDiv)
+
+        }
+				
+				
+        
+	})
+     
+        };
+        
+		
+		
+		
+        function children(el) {
+            var i = 0, children = [], child;
+            while (child = el.childNodes[i++]) {
+                if (child.nodeType === 1) children.push(child);
+            }
+            return children;
+        }
+		
+	})
+}
+
+var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+svgSearch.onclick = () =>{
+	svgSearch.style.animationName = 'expo'
+	
+	
+	if (width < 600) {
+		setTimeout(()=>{
+		logos.style.display = 'none'
+		links.style.display = 'flex'
+		svgSearch.style.display = 'none'
+		serieCon.style.justifyContent = 'space-between'
+		console.log("is small")
+	}, 400)
+	} else {
+		setTimeout(()=>{
+		logos.style.display = 'flex'
+		links.style.display = 'flex'
+		svgSearch.style.display = 'none'
+		console.log("is Big")
+	}, 400)
+	}
+	
+}
+
+let closeSvg = document.getElementById('closeSvg')
+
+closeSvg.onclick = ()=>{
+	svgSearch.style.animationName = 'expi'
+	
+	setTimeout(()=>{
+		logos.style.display = 'flex'
+		links.style.display = 'none'
+		svgSearch.style.display = 'flex'
+		console.log("is Big")
+	}, 400)
+}
+
+ 
+
+// Serie TV Page
+
+let parentSerieZ = document.querySelector('.serieZ')
+    fetch('https://76aoj6qf4l.execute-api.us-east-1.amazonaws.com/API/limit/25/sort/recommended')
+    .then(r => r.json()).then( res => {
+        
+        for (const key in res) {
+
+            let idSerie = res[key].id
+            let urlImg = res[key].fanart.url
+            let nameSerie = res[key].name
+
+            let serieContainer = document.createElement('div')
+            serieContainer.setAttribute('class', 'serie-container')
+
+            let imgSerie = document.createElement('img')
+            imgSerie.setAttribute('src', urlImg)
+
+            serieContainer.appendChild(imgSerie)
+            parentSerieZ.appendChild(serieContainer)
+
+        }
+        
+        parentSerieZ.onclick = function (e) {
+            var tgt = e.target, i = 0, items;
+            if (tgt === this) return;
+            items = children(this);
+            while (tgt.parentNode !== this) tgt = tgt.parentNode;
+            while (items[i] !== tgt) i++;
+            
+            spinner.style.display = 'flex'
+
+            setTimeout(() => {
+                spinner.style.display = 'none'
+            }, 2000);
+      
+      poster.style.display = 'none'
+      serieTV.style.display = 'none'
+      serieInfo.style.display = 'flex'
+      
+      closeBTN.style.display = 'flex'
+      
+      h3Info.innerHTML = res[i].name
+      
+      
+      imgInfo.setAttribute('src', res[i].fanart.url)
+      
+
+      fetch('https://76aoj6qf4l.execute-api.us-east-1.amazonaws.com/API/INFO/'+res[i].id)
+      .then( reso => reso.json()).then(info => { 
+        
+
+        pInfo.innerHTML = info.season_count + ' Season - '+info.network
+        spanInfo.innerHTML = info.rating+ '/10'
+        typeInfo.innerHTML = '<p>Type: '+info.genres[0]+', '+info.genres[1]+', '+info.genres[2]+'</p>'
+        dateUscita.innerHTML = info.first_air_date
+        story.innerHTML = info.overview
+        
+
+        function kFormatter(num) {
+            return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
+        }
+
+        dayTime.innerHTML = info.day_of_week
+        hoursTime.innerHTML = info.air_time
+        durata.innerHTML = info.runtime+' min'
+        folowers.innerHTML = kFormatter(info.follower_count)+' watched this Serie TV'
+
+
+        for (const keps in info.characters) {
+           
+
+            let personDiv = document.createElement('div')
+            personDiv.setAttribute('class', 'person')
+
+            let imgPersona = document.createElement('img')
+            imgPersona.setAttribute('src', info.characters[keps].poster.url)
+
+            personDiv.appendChild(imgPersona)
+
+            let infoPerson = document.createElement('div')
+            infoPerson.setAttribute('class', 'infoPerson')
+
+            let nameH5 = document.createElement('h5')
+            let nameH4 = document.createElement('h4')
+
+            nameH5.innerHTML =  info.characters[keps].name
+            nameH4.innerHTML =  info.characters[keps].actor_name
+
+            infoPerson.appendChild(nameH5)
+            infoPerson.appendChild(nameH4)
+
+            personDiv.appendChild(infoPerson)
+
+            parentPerson.appendChild(personDiv)
+
+        }
+        
+      })
+     
+        };
+        
+        function children(el) {
+            var i = 0, children = [], child;
+            while (child = el.childNodes[i++]) {
+                if (child.nodeType === 1) children.push(child);
+            }
+            return children;
+        }
+
+        
+        
+    })
+	
+		
+	window.onload = Loader
+	
+	
+	function Loader(mo) {
+		if (mo = true) {
+			spinner.style.display = 'flex'
+			
+			setTimeout(()=>{
+				spinner.style.display = 'none'
+			}, 2500)
+			return false
+		}
+	}
+	
+	Loader(true)
+	
+	// end serieZ 
